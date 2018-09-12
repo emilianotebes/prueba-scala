@@ -43,18 +43,47 @@ class Prueba {
   }
 
   def filterOddPositions(arr: List[Int]): List[Int] = {
-    arr.filter(p => isOdd(arr.indexOf(p)))
-    var i = 0;
-    var newArray = List()
-    for (i <- 0 to arr.length - 1) {
-      if (isOdd(i)) {
-        newArray = newArray.
-      }
-    }
-    return newArray
+    val filteredIndices = arr.indices.filter(i => isOdd(i))
+    return filteredIndices.map(i => arr(i)).toList
   }
 
   private def isOdd(i: Int) = {
-    i % 2 == 1
+    i % 2 == 1 || i % 2 == -1
   }
+
+
+  def intToArray(num: Int): List[Int] = {
+    val myList = List.range(0, num)
+    myList
+  }
+
+  def reverseWithoutReverse(arr: List[Int]): List[Int] = {
+    var newList: List[Int] = List()
+    for (i <- arr.length - 1 to 0 by -1) {
+      newList = newList.:+(arr(i))
+    }
+    newList
+  }
+
+  def sumOddElements(arr: List[Int]): Int = {
+    arr.filter(n => isOdd(n)).sum
+  }
+
+  def countElements(arr: List[Int]): Int = {
+    var bla = 0
+    arr.foreach(f => bla = bla + 1)
+    bla
+  }
+
+  def updateUsingAbsoluteValues(arr: List[Int]): List[Int] = {
+    arr.map(p => {
+      if (p < 0) {
+        p * (-1)
+      } else {
+        p
+      }
+    })
+  }
+
+  def eX
 }
