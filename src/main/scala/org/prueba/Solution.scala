@@ -15,10 +15,34 @@ object Solution {
     val stdin = scala.io.StdIn
 
     val n = stdin.readLine.trim.toInt
+    var numbers = new Array[Double](n)
 
     for (nItr <- 1 to n) {
       val x = stdin.readLine.trim.toDouble
+      numbers(nItr - 1) = x
     }
 
+    for (i <- numbers) {
+      println(calculateSeriesExpansion(i))
+    }
+
+
+  }
+
+  private def calculateSeriesExpansion(x: Double) = {
+    var terms = new Array[Double](10)
+    for (i <- 0 to terms.length - 1) {
+      val numerador = math.pow(x, i)
+      val denominador = factorial(i)
+      terms(i) = numerador / denominador
+    }
+    terms.sum
+  }
+
+  def factorial(n: Int): Int = {
+    if (n == 0)
+      return 1
+    else
+      return n * factorial(n - 1)
   }
 }
