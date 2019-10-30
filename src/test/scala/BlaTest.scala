@@ -77,5 +77,10 @@ class BlaTest extends FlatSpec with Matchers {
 
   }
 
+  "probando for" should "ble" in {
+    val prueba = new Prueba
+    prueba.bla(12)
+  }
+
 
 }

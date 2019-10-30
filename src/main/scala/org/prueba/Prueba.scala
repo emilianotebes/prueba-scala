@@ -85,4 +85,19 @@ class Prueba {
     })
   }
 
+  def bla(valor: Int) = {
+    valor * valor
+  }
+
+//  def pruebaFor = {
+//    val valor = 1
+//    for {
+//      a <- bla(valor)
+//      b <- bla(a)
+//    } yield {
+//      val ble = (a, b)
+//      ble
+//    }
+//  }
+
 }
